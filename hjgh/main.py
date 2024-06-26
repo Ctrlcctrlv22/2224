@@ -1,56 +1,25 @@
 from tkinter import *
 
-def finish():
-    root.destroy()
-    print('приложение закрыто')
-
 root = Tk()
-root.title("Приложение")
-root.geometry("700x350")
-root.minsize(100,100)
-#root.maxsize(900, 500)
-root.protocol("WM_DELETE_WINDOW", finish)
-#root.attributes("-fullscreen", True)
-root.attributes("-alpha", 1)
+root.title("Приложения")
+root.geometry("700x500")
+root.configure(bg="#0e0326")
 
-icon = PhotoImage(file = "icon.png")
-root.iconphoto(False, icon)
+txt = Label(root, text='Best App in the world', font=('Comic Sans Ms', 20, 'bold'), bg="#0e0326", fg="#fab905")
+txt.pack()
 
-#label = Label(text= 'clicker cabibaraahahhahahahhaahaxd')
-#label.pack()
+frame= Frame(root, bg="#0e0326")
+frame.pack(anchor='center')
 
-clicks = 0
-
-def click_button():
-    global clicks
-    clicks += 1
-    btn["text"] = f"clicks {clicks}"
-
-btn = Button(text='Click ', command=click_button)
-btn.pack()
-
-def click_button1():
-    root.attributes("-fullscreen", True)   
-    
-def click_button2():
-    root.attributes("-fullscreen", False)
-   
-def finish():
-    root.destroy()
-
-btn = Button(text='Click me', command=click_button1)
-btn.pack()
-
-btn = Button(text='dont click me', command=click_button2)
-btn.pack()
+btn1 = Button(frame, text='home', bg='#fab100', fg='#0e0', font=('Caslon', 14, 'bold'))
+btn2 = Button(frame, text='home', bg='#fab200', fg='#0e0', font=('Caslon', 14, 'bold'))
+btn3 = Button(frame, text='home', bg='#fab300', fg='#0e0', font=('Caslon', 14, 'bold'))
+btn4 = Button(frame, text='home', bg='#fab400', fg='#0e0', font=('Caslon', 14, 'bold'))
 
 
-btn = Button(text='close', command=finish)
-btn.pack()
-
-btn = Button(text='clicks', state=["disabled"])
-btn.pack()
-
-
+btn1.grid(row=0, column=0, padx=10, pady=10)
+btn2.grid(row=0, column=1, padx=10, pady=10)
+btn3.grid(row=0, column=2, padx=10, pady=10)
+btn4.grid(row=0, column=3, padx=10, pady=10)
 
 root.mainloop()
